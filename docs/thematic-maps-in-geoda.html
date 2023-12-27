@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 4 Thematic maps in Geoda | GeoDa course</title>
+<meta name="author" content="Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.">
+<meta name="description" content="Our today’s lesson is about how to make simple thematic maps using GeoDa software. We will explore thematic mapping toolkit using Chicago Community Area dataset which has a large attribute table....">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Chapter 4 Thematic maps in Geoda | GeoDa course">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Our today’s lesson is about how to make simple thematic maps using GeoDa software. We will explore thematic mapping toolkit using Chicago Community Area dataset which has a large attribute table....">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 4 Thematic maps in Geoda | GeoDa course">
+<meta name="twitter:description" content="Our today’s lesson is about how to make simple thematic maps using GeoDa software. We will explore thematic mapping toolkit using Chicago Community Area dataset which has a large attribute table....">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">GeoDa course</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="the-inroduction.html"><span class="header-section-number">2</span> The Inroduction</a></li>
+<li><a class="" href="working-with-graphics-in-geoda.html"><span class="header-section-number">3</span> Working with graphics in GeoDa</a></li>
+<li><a class="active" href="thematic-maps-in-geoda.html"><span class="header-section-number">4</span> Thematic maps in Geoda</a></li>
+<li><a class="" href="clustering-algorithms-in-real-life-problems.html"><span class="header-section-number">5</span> Clustering algorithms in real life problems</a></li>
+<li><a class="" href="spatial-statistics-in-geoda.-part-1.html"><span class="header-section-number">6</span> Spatial statistics in GeoDa. Part 1</a></li>
+<li><a class="" href="spatial-statistics-in-geoda.-part-2.html"><span class="header-section-number">7</span> Spatial statistics in GeoDa. Part 2</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="thematic-maps-in-geoda" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> Thematic maps in Geoda<a class="anchor" aria-label="anchor" href="#thematic-maps-in-geoda"><i class="fas fa-link"></i></a>
+</h1>
+<p>Our today’s lesson is about how to make simple thematic maps using GeoDa software. We will explore thematic mapping toolkit using Chicago Community Area dataset which has a large attribute table. It allows us to create a huge variety of thematic maps.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="images/ex_3_1.png" alt="Chicago Community Area dataset"><p class="caption">
+Figure 3.1: Chicago Community Area dataset
+</p>
+</div>
+<div id="what-is-a-thematic-map" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> What is a thematic map?<a class="anchor" aria-label="anchor" href="#what-is-a-thematic-map"><i class="fas fa-link"></i></a>
+</h2>
+<p>But first, what is a thematic map? Roughly speaking, a thematic map is a map about certain theme. It’s interesting to see some kind of geographical pattern of a particular subject matter that’s why we use such maps. The GeoDa allows us to create different kinds of a thematic maps. So, let’s focus on some of them. During the lesson, we will use the interface which is shown on the left part of the slide.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="images/ex_3_2.png" alt="Thematic maooing toolkit"><p class="caption">
+Figure 3.2: Thematic maooing toolkit
+</p>
+</div>
+</div>
+<div id="control-panel" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Control panel<a class="anchor" aria-label="anchor" href="#control-panel"><i class="fas fa-link"></i></a>
+</h2>
+<p>When the window opens, you will notice several icons at the top. That tools are used to select elements on the map, invert the selection, zoom in and zoom out. Also you can add the basemap. The tools details we will describe later.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="images/ex_3_3.png" alt="Control panel"><p class="caption">
+Figure 3.3: Control panel
+</p>
+</div>
+</div>
+<div id="quantile-map" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> Quantile map<a class="anchor" aria-label="anchor" href="#quantile-map"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now, let’s explore some mapping options. You can create a map using quantiles, dividing the entire data array into equal parts. You have the opportunity to choose the number of parts, ranging from two to ten.This kind of map is effective in accurately depicting the distribution of the indicator. By dividing it into equal intervals, we can easily identify the geographical patterns of the phenomenon’s distribution throughout the territory.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="images/ex_3_4.png" alt="Quantile map"><p class="caption">
+Figure 3.4: Quantile map
+</p>
+</div>
+</div>
+<div id="percentile-map" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> Percentile map<a class="anchor" aria-label="anchor" href="#percentile-map"><i class="fas fa-link"></i></a>
+</h2>
+<p>Another possible choropleth is a percentile map, which enables the visualization of the percentage distribution of the variable by region.This map is suitable for displaying a non-uniform distribution.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="images/ex_3_5.png" alt="Percentile map"><p class="caption">
+Figure 3.5: Percentile map
+</p>
+</div>
+</div>
+<div id="standard-deviation-map" class="section level2" number="4.5">
+<h2>
+<span class="header-section-number">4.5</span> Standard deviation map<a class="anchor" aria-label="anchor" href="#standard-deviation-map"><i class="fas fa-link"></i></a>
+</h2>
+<p>Another interesting map is the standard deviation map which shows the deviation of the variable in each area from the average for all areas. If you wish to present the deviation of values in each cell from the mean, then this map option can be utilized.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="images/ex_3_6.png" alt="Standard deviation map"><p class="caption">
+Figure 3.6: Standard deviation map
+</p>
+</div>
+</div>
+<div id="unique-values-map-and-choosing-a-color" class="section level2" number="4.6">
+<h2>
+<span class="header-section-number">4.6</span> Unique values map and choosing a color<a class="anchor" aria-label="anchor" href="#unique-values-map-and-choosing-a-color"><i class="fas fa-link"></i></a>
+</h2>
+<p>Sometimes it’s important to create the unique values map. With this kind of map you can focus on the color customization options in detail. In previous examples we used a gradient scale filling. But it’s also necessary to customize color palette for optimal appearance. To do so, right-click on the color icon, select “Flip Color for Category” from the menu, and choose the color from the options.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="images/ex_3_7.png" alt="Unique values map and choosing a color"><p class="caption">
+Figure 3.7: Unique values map and choosing a color
+</p>
+</div>
+</div>
+<div id="custom-breaks-with-category-editor" class="section level2" number="4.7">
+<h2>
+<span class="header-section-number">4.7</span> Custom breaks with category editor<a class="anchor" aria-label="anchor" href="#custom-breaks-with-category-editor"><i class="fas fa-link"></i></a>
+</h2>
+<p>Another helpful feature in GeoDa is a scale division using different methods. The methods are natural intervals and equal intervals. Also you can create your own custom division method adjusting such parameters as the number of intervals, a value, and a method.This option is useful if you want to selectively highlight specific value groups and indicate them on the map. This can assist the data user in establishing logical connections.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="images/ex_3_8.png" alt="Custom breaks with category editor"><p class="caption">
+Figure 3.8: Custom breaks with category editor
+</p>
+</div>
+</div>
+<div id="bubble-map-cartogram" class="section level2" number="4.8">
+<h2>
+<span class="header-section-number">4.8</span> Bubble map (cartogram)<a class="anchor" aria-label="anchor" href="#bubble-map-cartogram"><i class="fas fa-link"></i></a>
+</h2>
+<p>You can create bubble map or cartogram with two variables. On picture on the right you can see that a circle size and a color visualize two different variables. All the previous maps have demonstrated the distribution of a single indicator. If you need to showcase the spatial relationship between two indicators, then this version of the map should be used.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="images/ex_3_9.png" alt="Bubble map (cartogram)"><p class="caption">
+Figure 3.9: Bubble map (cartogram)
+</p>
+</div>
+</div>
+<div id="basemap" class="section level2" number="4.9">
+<h2>
+<span class="header-section-number">4.9</span> Basemap<a class="anchor" aria-label="anchor" href="#basemap"><i class="fas fa-link"></i></a>
+</h2>
+<p>In conclusion, it is important to note a big variety of available basemaps in the software. You can choose not only default maps and satellite images but also specify a path to other map server location.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="images/ex_3_10.png" alt="Basemap"><p class="caption">
+Figure 3.10: Basemap
+</p>
+</div>
+</div>
+<div id="save-and-export" class="section level2" number="4.10">
+<h2>
+<span class="header-section-number">4.10</span> Save and export<a class="anchor" aria-label="anchor" href="#save-and-export"><i class="fas fa-link"></i></a>
+</h2>
+<p>To save your map, right-click on an empty space in the map window and select “Save Image As.” In the window that appears, you can adjust the map size and position of the legend.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="images/ex_3_11.png" alt="Save and export"><p class="caption">
+Figure 3.11: Save and export
+</p>
+</div>
+</div>
+<div id="exercise" class="section level2" number="4.11">
+<h2>
+<span class="header-section-number">4.11</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
+</h2>
+<p>As an exercise, you should create three different maps using the specified dataset. The first map is a quantile map with 6 intervals, the second map is a percentile map and the third one is a standard deviation map. Write 5 sentences about differences between the first two maps. Change the colors and select a basemap for the standard deviation map. Save all three maps in .png format.</p>
+</div>
+<div id="cheat-sheet" class="section level2" number="4.12">
+<h2>
+<span class="header-section-number">4.12</span> Cheat Sheet<a class="anchor" aria-label="anchor" href="#cheat-sheet"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>If you want to reflect 1 indicator:
+<ol style="list-style-type: decimal">
+<li>Use a quantile map if you want to display
+a measure divided into equal intervals;</li>
+<li>Use a percentile map if you want a different
+division of the indicator;</li>
+<li>If you wish to present the deviation of values in
+each cell from the mean, then this map option
+can be utilized</li>
+<li>If you want to represent the deviation of values ​​
+in each map cell from the mean, use
+a standard deviation map</li>
+<li>You can use a unique values map if you want to
+mark areas where the indicator values ​​are the same;</li>
+<li>You can use other scale division options to
+manipulate data and visualize it on a map.</li>
+</ol>
+</li>
+<li>If you need to demonstrate spatial relationships
+between two indicators, then a cartogram should be used.</li>
+</ol>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="working-with-graphics-in-geoda.html"><span class="header-section-number">3</span> Working with graphics in GeoDa</a></div>
+<div class="next"><a href="clustering-algorithms-in-real-life-problems.html"><span class="header-section-number">5</span> Clustering algorithms in real life problems</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#thematic-maps-in-geoda"><span class="header-section-number">4</span> Thematic maps in Geoda</a></li>
+<li><a class="nav-link" href="#what-is-a-thematic-map"><span class="header-section-number">4.1</span> What is a thematic map?</a></li>
+<li><a class="nav-link" href="#control-panel"><span class="header-section-number">4.2</span> Control panel</a></li>
+<li><a class="nav-link" href="#quantile-map"><span class="header-section-number">4.3</span> Quantile map</a></li>
+<li><a class="nav-link" href="#percentile-map"><span class="header-section-number">4.4</span> Percentile map</a></li>
+<li><a class="nav-link" href="#standard-deviation-map"><span class="header-section-number">4.5</span> Standard deviation map</a></li>
+<li><a class="nav-link" href="#unique-values-map-and-choosing-a-color"><span class="header-section-number">4.6</span> Unique values map and choosing a color</a></li>
+<li><a class="nav-link" href="#custom-breaks-with-category-editor"><span class="header-section-number">4.7</span> Custom breaks with category editor</a></li>
+<li><a class="nav-link" href="#bubble-map-cartogram"><span class="header-section-number">4.8</span> Bubble map (cartogram)</a></li>
+<li><a class="nav-link" href="#basemap"><span class="header-section-number">4.9</span> Basemap</a></li>
+<li><a class="nav-link" href="#save-and-export"><span class="header-section-number">4.10</span> Save and export</a></li>
+<li><a class="nav-link" href="#exercise"><span class="header-section-number">4.11</span> Exercise</a></li>
+<li><a class="nav-link" href="#cheat-sheet"><span class="header-section-number">4.12</span> Cheat Sheet</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>GeoDa course</strong>" was written by Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.. It was last built on 2023-12-27.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

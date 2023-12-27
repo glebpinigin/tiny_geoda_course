@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Working with graphics in GeoDa | GeoDa course</title>
+<meta name="author" content="Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.">
+<meta name="description" content="3.1 Introduction Today we are going to get acquaintanced with creating graphics for various statistic datasets in GeoDa. This GIS has prepared datasets and today we’ll use one of them. We’re going...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Working with graphics in GeoDa | GeoDa course">
+<meta property="og:type" content="book">
+<meta property="og:description" content="3.1 Introduction Today we are going to get acquaintanced with creating graphics for various statistic datasets in GeoDa. This GIS has prepared datasets and today we’ll use one of them. We’re going...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Working with graphics in GeoDa | GeoDa course">
+<meta name="twitter:description" content="3.1 Introduction Today we are going to get acquaintanced with creating graphics for various statistic datasets in GeoDa. This GIS has prepared datasets and today we’ll use one of them. We’re going...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">GeoDa course</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="the-inroduction.html"><span class="header-section-number">2</span> The Inroduction</a></li>
+<li><a class="active" href="working-with-graphics-in-geoda.html"><span class="header-section-number">3</span> Working with graphics in GeoDa</a></li>
+<li><a class="" href="thematic-maps-in-geoda.html"><span class="header-section-number">4</span> Thematic maps in Geoda</a></li>
+<li><a class="" href="clustering-algorithms-in-real-life-problems.html"><span class="header-section-number">5</span> Clustering algorithms in real life problems</a></li>
+<li><a class="" href="spatial-statistics-in-geoda.-part-1.html"><span class="header-section-number">6</span> Spatial statistics in GeoDa. Part 1</a></li>
+<li><a class="" href="spatial-statistics-in-geoda.-part-2.html"><span class="header-section-number">7</span> Spatial statistics in GeoDa. Part 2</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="working-with-graphics-in-geoda" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Working with graphics in GeoDa<a class="anchor" aria-label="anchor" href="#working-with-graphics-in-geoda"><i class="fas fa-link"></i></a>
+</h1>
+<div id="introduction" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+</h2>
+<p>Today we are going to get acquaintanced with creating graphics for various statistic datasets in GeoDa. This GIS has prepared datasets and today we’ll use one of them. We’re going to work with <strong>Boston Housing 1970s</strong>, which contains housing and neighborhood data for the city of Boston based on research from the 1970s-90s. This dataset is a point shapefile with <strong>506 observations</strong> and <strong>23 variables</strong>. To open this data you have to choose <em>File&gt;New</em> and to choose <em>Boston Home Sales</em> from <em>Sample Data</em>. After that you’ll be able to see the spatial distribution of the parameter. In the bottom left you’ll see the information about the number of observations.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="images/2_1_Opening_the_dataset.png" alt="Opening the dataset"><p class="caption">
+Figure 3.1: Opening the dataset
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="images/2_2_Boston_Housing_1970s.png" alt="Boston Housing 1970s"><p class="caption">
+Figure 3.2: Boston Housing 1970s
+</p>
+</div>
+</div>
+<div id="specific-od-data-storage-in-gis" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Specific od data storage in GIS<a class="anchor" aria-label="anchor" href="#specific-od-data-storage-in-gis"><i class="fas fa-link"></i></a>
+</h2>
+<p>To understand what observations and variables stand for we have to find out some facts about the ways of storing data in GIS. In GIS each object in a dataset consists of 2 parts: <strong>geometric</strong> (you see it) and <strong>semantic</strong> (responsible for the property of the object and represented as a row in a table). So, the semantic part is a table, where each <em>line</em> is an <em>object</em> of a dataset and each <em>column</em> contains the <em>characteristic of the object</em>. It means that the number of <em>observations</em> is a number of <em>objects (rows)</em> and the number of <em>variables</em> stands for the number of <em>object characteristics (columns)</em>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="images/2_3_Storing_data_in_GIS.png" alt="Storing data in GIS"><p class="caption">
+Figure 3.3: Storing data in GIS
+</p>
+</div>
+</div>
+<div id="graphic-types-in-geoda" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Graphic types in GeoDa<a class="anchor" aria-label="anchor" href="#graphic-types-in-geoda"><i class="fas fa-link"></i></a>
+</h2>
+<p>There’re 8 types of graphics in GeoDA: <strong>Histogram, Box Plot, Scatter Plot, Scatter Plot, Matrix, Bubble Chart, 3D Scatter Plot, Conditional Plot</strong></p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="images/2_4_Types_of_graphics_in_GeoDa.png" alt="Types of graphics in GeoDa"><p class="caption">
+Figure 3.4: Types of graphics in GeoDa
+</p>
+</div>
+<div id="histogram" class="section level3" number="3.3.1">
+<h3>
+<span class="header-section-number">3.3.1</span> Histogram<a class="anchor" aria-label="anchor" href="#histogram"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Histogram</strong> shows the meanings of one variable for each chosen object. You have to push the histogram button on the control panel and to choose the variable you need. If you want to create histogram not for all objects, but for concrete ones, you have to choose them either from the table or from the map. In that case the histogram will show the meanings of the variable for all objects and for chosen ones. To open the table, you have to push the button on the control panel. To chose other colors for the histogram or to export it as an image, you have to click it with the right button and to choose the option you need. This works for all types of graphics in GeoDa.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="images/2_5_Creating_Histogram_in_GeoDa.png" alt="Creating Histogram in GeoDa"><p class="caption">
+Figure 3.5: Creating Histogram in GeoDa
+</p>
+</div>
+</div>
+<div id="box-plot" class="section level3" number="3.3.2">
+<h3>
+<span class="header-section-number">3.3.2</span> Box plot<a class="anchor" aria-label="anchor" href="#box-plot"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Boxplots</strong> are created to represent the distribution of a numeric variable. The graphic reflects maximum and minimum values, median, first and last quantiles and p-values at the same time. To create boxplot, you also just have to push the button on the control panel and to choose the variable you need. Boxplot also has some numeric characteristics for easier interpretation.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="images/2_6_Creating_Boxplot_in_GeoDa.png" alt="Creating Box plot in GeoDa"><p class="caption">
+Figure 3.6: Creating Box plot in GeoDa
+</p>
+</div>
+</div>
+<div id="scatter-plot" class="section level3" number="3.3.3">
+<h3>
+<span class="header-section-number">3.3.3</span> Scatter plot<a class="anchor" aria-label="anchor" href="#scatter-plot"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Scatter plot</strong> is based on using Cartesian coordinates to display values for typically 2 variables for a dataset. There’re <em>3 types</em> of Scatter plots in GeoDa. To create each of them, you still have to push a specified button on a control panel and create the variables. For classical scatter plot you’ll have to choose 2 of them. The <strong>3D Scatter plot</strong> uses the 3-dimensial representation for 3 variables. Finally, the <strong>Scatter plot Matrix</strong> is a grid of scatter plots used to visualize bivariate relationships between combinations of variables. Here you can choose more than 2 or 3 variables for comparison, if you need. To create scatter plots, you also just have to push the button on the control panel and to choose the variable you need.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="images/2_7_Creating_Scatterplot_and_Scatterplot_Matrix_in_GeoDa.png" alt="Creating Scatterplot and Scatterplot Matrix in GeoDa"><p class="caption">
+Figure 3.7: Creating Scatterplot and Scatterplot Matrix in GeoDa
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="images/2_8_Creating_3D_Scatterplot_in_GeoDa.png" alt="Creating 3D Scatterplot in GeoDa"><p class="caption">
+Figure 3.8: Creating 3D Scatterplot in GeoDa
+</p>
+</div>
+</div>
+<div id="bubble-chart" class="section level3" number="3.3.4">
+<h3>
+<span class="header-section-number">3.3.4</span> Bubble Chart<a class="anchor" aria-label="anchor" href="#bubble-chart"><i class="fas fa-link"></i></a>
+</h3>
+<p>A <strong>bubble chart</strong> is a type of data visualization that uses circles (bubbles) to represent data points in a two-dimensional plot. It is similar to a scatter plot, but uses bubbles instead of dots. Typically, a bubble chart shows the values of three numeric variables, with each circle representing an observation and its position on the plot indicating the values of two other variables. To create bubble chart, you also have to push the button on the control panel and to choose the variable you need.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="images/2_9_Creating_a_Bubble_Chart_in_GeoDa.png" alt="Creating Bubble Chart in GeoDa"><p class="caption">
+Figure 3.9: Creating Bubble Chart in GeoDa
+</p>
+</div>
+</div>
+<div id="parallel-coordinates-plot" class="section level3" number="3.3.5">
+<h3>
+<span class="header-section-number">3.3.5</span> Parallel coordinates plot<a class="anchor" aria-label="anchor" href="#parallel-coordinates-plot"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Parallel coordinates plot</strong> is a common way of visualizing and analyzing high-dimensional datasets. A point in n-dimensional space is represented as a polyline with vertices on the parallel axes and the position of the vertex corresponds to the coordinate of the point. To create it, you have to push the button on the control panel and to choose the variable you need.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="images/2_10_Creating_a_Parallel_coordinates_plot_in_GeoDa.png" alt="Creating Parallel coordinates plot in GeoDa"><p class="caption">
+Figure 3.10: Creating Parallel coordinates plot in GeoDa
+</p>
+</div>
+</div>
+<div id="conditional-plot" class="section level3" number="3.3.6">
+<h3>
+<span class="header-section-number">3.3.6</span> Conditional plot<a class="anchor" aria-label="anchor" href="#conditional-plot"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<strong>Conditional plot</strong> consists of two variables conditional on the value of a third variable. You can create <em>a map, a histogram, a scatter plot or a boxplot</em>, using the button on a control panel. You’ll have to choose 3 variables and get 9 graphics, showing their dependencies.</li>
+</ul>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="images/2_11_Creating_a_Conditional_plot_in_GeoDa.png" alt="Creating a Conditional plot in GeoDa"><p class="caption">
+Figure 3.11: Creating a Conditional plot in GeoDa
+</p>
+</div>
+</div>
+</div>
+<div id="practical-exercise" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> Practical exercise<a class="anchor" aria-label="anchor" href="#practical-exercise"><i class="fas fa-link"></i></a>
+</h2>
+<p>To check yourself after this lesson you have to built 3 Graphics for the observations with the towno=27.
+1. You have to create a histogram to analyze distances to Boston employment centers (dis);
+2. You have to create a histogram to analyze per capita crime (crim) and fix in *.txt file the minimum, maximum, mean and median values of the variable;
+3. You have to create a bubble chart to analyze the dependencies between such variables as age (x-axes), dis (y-axes), crim (bubble-size) and indus (bubble-color).
+The result of your task must be represented by a txt-file with statistical parameters and 3 png-files with graphics.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="the-inroduction.html"><span class="header-section-number">2</span> The Inroduction</a></div>
+<div class="next"><a href="thematic-maps-in-geoda.html"><span class="header-section-number">4</span> Thematic maps in Geoda</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#working-with-graphics-in-geoda"><span class="header-section-number">3</span> Working with graphics in GeoDa</a></li>
+<li><a class="nav-link" href="#introduction"><span class="header-section-number">3.1</span> Introduction</a></li>
+<li><a class="nav-link" href="#specific-od-data-storage-in-gis"><span class="header-section-number">3.2</span> Specific od data storage in GIS</a></li>
+<li>
+<a class="nav-link" href="#graphic-types-in-geoda"><span class="header-section-number">3.3</span> Graphic types in GeoDa</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#histogram"><span class="header-section-number">3.3.1</span> Histogram</a></li>
+<li><a class="nav-link" href="#box-plot"><span class="header-section-number">3.3.2</span> Box plot</a></li>
+<li><a class="nav-link" href="#scatter-plot"><span class="header-section-number">3.3.3</span> Scatter plot</a></li>
+<li><a class="nav-link" href="#bubble-chart"><span class="header-section-number">3.3.4</span> Bubble Chart</a></li>
+<li><a class="nav-link" href="#parallel-coordinates-plot"><span class="header-section-number">3.3.5</span> Parallel coordinates plot</a></li>
+<li><a class="nav-link" href="#conditional-plot"><span class="header-section-number">3.3.6</span> Conditional plot</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#practical-exercise"><span class="header-section-number">3.4</span> Practical exercise</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>GeoDa course</strong>" was written by Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.. It was last built on 2023-12-27.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

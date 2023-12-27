@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Spatial statistics in GeoDa. Part 1 | GeoDa course</title>
+<meta name="author" content="Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.">
+<meta name="description" content="6.1 What is spatial statistics? Spatial statistics is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space. Most often, tools...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Spatial statistics in GeoDa. Part 1 | GeoDa course">
+<meta property="og:type" content="book">
+<meta property="og:description" content="6.1 What is spatial statistics? Spatial statistics is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space. Most often, tools...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Spatial statistics in GeoDa. Part 1 | GeoDa course">
+<meta name="twitter:description" content="6.1 What is spatial statistics? Spatial statistics is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space. Most often, tools...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">GeoDa course</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="the-inroduction.html"><span class="header-section-number">2</span> The Inroduction</a></li>
+<li><a class="" href="working-with-graphics-in-geoda.html"><span class="header-section-number">3</span> Working with graphics in GeoDa</a></li>
+<li><a class="" href="thematic-maps-in-geoda.html"><span class="header-section-number">4</span> Thematic maps in Geoda</a></li>
+<li><a class="" href="clustering-algorithms-in-real-life-problems.html"><span class="header-section-number">5</span> Clustering algorithms in real life problems</a></li>
+<li><a class="active" href="spatial-statistics-in-geoda.-part-1.html"><span class="header-section-number">6</span> Spatial statistics in GeoDa. Part 1</a></li>
+<li><a class="" href="spatial-statistics-in-geoda.-part-2.html"><span class="header-section-number">7</span> Spatial statistics in GeoDa. Part 2</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="spatial-statistics-in-geoda.-part-1" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Spatial statistics in GeoDa. Part 1<a class="anchor" aria-label="anchor" href="#spatial-statistics-in-geoda.-part-1"><i class="fas fa-link"></i></a>
+</h1>
+<div id="what-is-spatial-statistics" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> What is spatial statistics?<a class="anchor" aria-label="anchor" href="#what-is-spatial-statistics"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Spatial statistics</strong> is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space.
+Most often, tools of spatial statistics are used to solve the problem of interpolation.
+In other words, we reconstruct a continuous field of distribution of a random variable from a limited set of data at observation points.
+However, spatial statistics as a scientific discipline is much wider, with its primary task being the statistical <em>description of spatial distributions</em>.</p>
+</div>
+<div id="why-spatial-statistics-is-important" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Why spatial statistics is important?<a class="anchor" aria-label="anchor" href="#why-spatial-statistics-is-important"><i class="fas fa-link"></i></a>
+</h2>
+<p>Spatial statistics is based on a widely developed mathematical apparatus, and understanding the basics of it is a necessary condition for the deliberate use of geostatistical methods in practice.
+The world of spatial statistics is based on the fundamental concepts of <em>random variables</em>, <em>random functions</em>, and <em>random processes</em>.
+Measuring uncertainty is critical to decision making because it provides information about possible outcomes for all locations, not just one predicted value.
+The GeoDa software has a wide range of spatiostatistical tools, primarily focused on finding spatial correlations in existing data.
+So, it is essential to explore how to use GeoDa to solve spatial tasks.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="images/econometrics.png" alt="Spatial Econometrics topic in [Science Direct portal](https://www.sciencedirect.com/topics/social-sciences/spatial-econometrics)"><p class="caption">
+Figure 3.1: Spatial Econometrics topic in <a href="https://www.sciencedirect.com/topics/social-sciences/spatial-econometrics">Science Direct portal</a>
+</p>
+</div>
+</div>
+<div id="theory" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Theory<a class="anchor" aria-label="anchor" href="#theory"><i class="fas fa-link"></i></a>
+</h2>
+<p>The starting point of geostatistical analysis is a set of points <span class="math inline">\(\{p_1,p_2,...,p_n\}\)</span> called <strong>locations</strong>, each of which includes the value <span class="math inline">\(\{Z(p_1),Z(p_2),...,Z(p_n)\}\)</span> of some spatial variable.
+The spatial and attribute components are traditionally divided into two, and both can be random.
+Values in locations are obtained by measuring a spatially distributed variable.
+The measurement results, like the data used for calculations, usually characterize the state of the environment at a certain moment.
+To work with such data, the concept of a random variable is used.
+Therefore, a <em>random variable</em> is a function that, as a result of a random event, takes on a real value, and a random process is a family of random variables indexed by some parameter.</p>
+<blockquote>
+<p><strong>Random variable</strong> <span class="math inline">\(Z(w)\)</span> is a function, that, as a result of a random event <span class="math inline">\(w\)</span>, takes on a real value</p>
+<p><strong>Random process</strong> is a family of <em>random variables</em> indexed by some parameter <span class="math inline">\(t\)</span></p>
+</blockquote>
+</div>
+<div id="pre-prepared-data" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Pre-prepared data<a class="anchor" aria-label="anchor" href="#pre-prepared-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now, let’s explore the existing pre-prepared data available in the software.
+For example, we can examine the <strong>Boston Housing 1970s</strong> dataset, which includes housing and neighborhood data for the city of Boston based on research from the 1970s—90s.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="images/boston_dataset.png" alt="Overview of Boston Housing 1970s dataset" width="600"><p class="caption">
+Figure 3.2: Overview of Boston Housing 1970s dataset
+</p>
+</div>
+<p>It contains 506 observations with 23 variables, each point representing a house for sale.</p>
+<p>Let’s take two variables from the dataset that will help us solve a specific problem.
+Imagine you are working in the Boston housing market.
+It is necessary to find out in which part of the city it is profitable to sell housing with a large number of rooms.
+So the numeric vectors of median values of owner-occupied housing in $USD (<em>medv</em>) and the average numbers of rooms per dwelling (<em>rm</em>), can help us determine whether the value of a variable depends on the surroundings of points in space.</p>
+</div>
+<div id="morans-i-tests" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Moran’s I tests<a class="anchor" aria-label="anchor" href="#morans-i-tests"><i class="fas fa-link"></i></a>
+</h2>
+<p>One of the easiest ways to study whether there is a relationship between values in each location and in neighboring locations is the <strong>Moran’s Index test</strong>.
+Moran’s I statistic is arguably the most commonly used indicator of global spatial autocorrelation, expressed as a cross-product statistic between a variable and its spatial lag, with the variable expressed in deviations from its mean.
+Moran’s I statistic is then given by the formula:</p>
+<p><span class="math inline">\(I = \frac{\sum_{i} \sum_{j} w_ij z_i \cdot z_j/S_0}{\sum_{i}z_i^2/n}\)</span></p>
+<p>with <span class="math inline">\(w\)</span> as the elements of the spatial weights matrix, <span class="math inline">\(S_0\)</span> as the sum of all the weights, and n as the number of observations.</p>
+</div>
+<div id="weights-matrix-creation" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Weights matrix creation<a class="anchor" aria-label="anchor" href="#weights-matrix-creation"><i class="fas fa-link"></i></a>
+</h2>
+<p>First of all, we need to calculate the spatial weights matrix.
+To do this, <strong>click on the “W” icon</strong> located on the instrument panel.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="images/weight_matrix_hotbar.png" alt="Weight Manager icon" width="600"><p class="caption">
+Figure 3.3: Weight Manager icon
+</p>
+</div>
+<p>In the pop-up window, we begin to create a matrix of weights by <strong>clicking the “create” button</strong>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="images/weight_matrix_hotbar2.png" alt="Weight Manager icon" width="400"><p class="caption">
+Figure 3.4: Weight Manager icon
+</p>
+</div>
+<p>The study of spatial autocorrelation begins with an analysis of <em>geographic proximity</em>.
+That is, for each analyzed unit, we must determine the adjacent units.
+This is not so simple because there are many ways to define a neighborhood.
+GeoDa can calculate spatial weights <strong>by contiguity</strong> and <strong>by distance</strong>.
+Contiguity-based adjacency is used when analyzing data associated with area units, such as an administrative division grid.
+So, this is not our case, and we will calculate <u>distance weights</u>.
+<strong>Select the ID variable</strong> at the top of the window, then <strong>select the X- and Y-coordinate variables</strong> from the list below.
+Leave the rest of the fields with default settings.
+<strong>Click “create”</strong> and <strong>save the spatial weight file in your home directory</strong>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="images/weight_matrix_hotbar3.png" alt="Weight Manager icon" width="600"><p class="caption">
+Figure 3.5: Weight Manager icon
+</p>
+</div>
+</div>
+<div id="visualizing-adjacency" class="section level2" number="6.7">
+<h2>
+<span class="header-section-number">6.7</span> Visualizing adjacency<a class="anchor" aria-label="anchor" href="#visualizing-adjacency"><i class="fas fa-link"></i></a>
+</h2>
+<p>After that, in the “Weights Manager” pop-up window, you can see that <strong>the characteristics of the weights file appear</strong>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="images/weight_table.png" alt="Spatial weights table in _Weights Manager_" width="400"><p class="caption">
+Figure 3.6: Spatial weights table in <em>Weights Manager</em>
+</p>
+</div>
+<p>In that window, you can also explore a neighbors’ histogram, connectivity map, and connectivity graph.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-7-1"></span>
+<img src="images/connect_map.png" alt="Connectivity map" width="600"><p class="caption">
+Figure 6.1: Connectivity map
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-7-2"></span>
+<img src="images/connect_graph.png" alt="Connectivity graph" width="600"><p class="caption">
+Figure 6.2: Connectivity graph
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-7-3"></span>
+<img src="images/hist.png" alt="Neighbours' histogram" width="600"><p class="caption">
+Figure 6.3: Neighbours’ histogram
+</p>
+</div>
+<p>It’s interesting to see how the spatial algorithm works, and it’s also helpful to choose the correct type of adjacency to create appropriate spatial weights.</p>
+</div>
+<div id="global-morans-i-test" class="section level2" number="6.8">
+<h2>
+<span class="header-section-number">6.8</span> Global Moran’s I test<a class="anchor" aria-label="anchor" href="#global-morans-i-test"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now that a weights matrix has been created, we will use the <strong>Moran’s I tests</strong> to estimate the best district for selling houses.
+This test allows us to assess the statistical relationship between the value of the indicator in each location and in neighboring locations.
+Based on Moran’s test result, we can estimate spatial regression for different types of forecasts.
+There are two basic types of Moran’s tests.</p>
+<p><em>The global Moran’s test</em> evaluates the presence of statistical dependence for the entire set of points, while the local test evaluates each point separately.
+First of all, let’s calculate the univariate Moran’s test.
+<strong>Click on the Space tab</strong>, <strong>choose the Univariate Moran’s I test</strong>, <strong>select the “<em>medv</em>” variable</strong>, and <strong>click OK</strong>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="images/glob_moran_uni1.png" alt="Univariate Moran's I menu" width="400"><p class="caption">
+Figure 3.8: Univariate Moran’s I menu
+</p>
+</div>
+<p>The Moran’s test scatter plot appears.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="images/glob_moran_uni2.png" alt="Univariate Moran's I scatter plot" width="400"><p class="caption">
+Figure 3.9: Univariate Moran’s I scatter plot
+</p>
+</div>
+<p>Moran’s index ranges from -1 to 1.
+Our result is 0.269, which means that there is a weak statistical relationship between the cost of housing at each point and the neighboring points.
+We can also <strong>estimate a bivariate Moran’s test</strong> in same way.
+Instead of using the univariate Moran’s test, <strong>click on the bivariate Moran’s test</strong> and <strong>select the <em>medv</em> and <em>rm</em> variables</strong>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-10-1"></span>
+<img src="images/glob_moran_bi1.png" alt="Bivariate Moran's menu" width="400"><p class="caption">
+Figure 6.4: Bivariate Moran’s menu
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-10-2"></span>
+<img src="images/glob_moran_bi2.png" alt="Bivariate Moran's I scatter plot" width="400"><p class="caption">
+Figure 6.5: Bivariate Moran’s I scatter plot
+</p>
+</div>
+<p>The spatial correlation between housing medium values and number of rooms is exist.
+Now let’s explore in which areas of Boston will the relationship between variables be the greatest.</p>
+</div>
+<div id="local-morans-i-test" class="section level2" number="6.9">
+<h2>
+<span class="header-section-number">6.9</span> Local Moran’s I test<a class="anchor" aria-label="anchor" href="#local-morans-i-test"><i class="fas fa-link"></i></a>
+</h2>
+<p>For that purpose we can calculate <strong>the Local Moran’s I test</strong>.
+This test is much more interesting than the global test because we can create maps.
+Let’s try to calculate the univariate Local Moran’s test.
+<strong>Select the <em>medv</em> variable</strong> once again and <strong>click OK</strong>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="images/loc_moran_uni2.png" alt="Local Moran's I map menu" width="400"><p class="caption">
+Figure 3.11: Local Moran’s I map menu
+</p>
+</div>
+<p>In the pop-up window, you can choose three types of graphics.</p>
+<p>The first two are the cluster and significance maps that illustrate the spatial statistical differences.
+<strong>Mark both maps and click OK</strong>.</p>
+<p>The cluster map shows how strongly the cost of housing in neighboring locations is related to the cost of housing in each location, and the significance map shows how significant a statistical relationship is.
+The smaller the p-value, the greater the significance.</p>
+<p>Similarly, you can perform a local Moran’s test for two variables.
+Just choose the <em>medv</em> and <em>rm</em> values in the pop-up window, and you will see a result.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-12-1"></span>
+<img src="images/loc_moran_uni3.png" alt="Cluster map" width="600"><p class="caption">
+Figure 6.6: Cluster map
+</p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-12-2"></span>
+<img src="images/loc_moran_uni4.png" alt="Significance map" width="600"><p class="caption">
+Figure 6.7: Significance map
+</p>
+</div>
+<p>The cluster map allows us to understand in which areas of the city housing with a big number of rooms can be sold at a higher price.
+In the <em>high-high</em> and <em>low-low</em> areas houses with a small number of rooms are located.
+It is not profitable to sell housing with a large number of rooms there.</p>
+<p>Interesting to explore the <em>high-low</em> areas.
+Houses with a small number of rooms are located there.
+At the same time, there are houses with a large number of rooms around.
+Increasing prices for such apartments will not have a repulsive effect.
+It means that we <strong>need to choose a <em>high-low</em> areas</strong> to increase housing prices as a realtor.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="clustering-algorithms-in-real-life-problems.html"><span class="header-section-number">5</span> Clustering algorithms in real life problems</a></div>
+<div class="next"><a href="spatial-statistics-in-geoda.-part-2.html"><span class="header-section-number">7</span> Spatial statistics in GeoDa. Part 2</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#spatial-statistics-in-geoda.-part-1"><span class="header-section-number">6</span> Spatial statistics in GeoDa. Part 1</a></li>
+<li><a class="nav-link" href="#what-is-spatial-statistics"><span class="header-section-number">6.1</span> What is spatial statistics?</a></li>
+<li><a class="nav-link" href="#why-spatial-statistics-is-important"><span class="header-section-number">6.2</span> Why spatial statistics is important?</a></li>
+<li><a class="nav-link" href="#theory"><span class="header-section-number">6.3</span> Theory</a></li>
+<li><a class="nav-link" href="#pre-prepared-data"><span class="header-section-number">6.4</span> Pre-prepared data</a></li>
+<li><a class="nav-link" href="#morans-i-tests"><span class="header-section-number">6.5</span> Moran’s I tests</a></li>
+<li><a class="nav-link" href="#weights-matrix-creation"><span class="header-section-number">6.6</span> Weights matrix creation</a></li>
+<li><a class="nav-link" href="#visualizing-adjacency"><span class="header-section-number">6.7</span> Visualizing adjacency</a></li>
+<li><a class="nav-link" href="#global-morans-i-test"><span class="header-section-number">6.8</span> Global Moran’s I test</a></li>
+<li><a class="nav-link" href="#local-morans-i-test"><span class="header-section-number">6.9</span> Local Moran’s I test</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>GeoDa course</strong>" was written by Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.. It was last built on 2023-12-27.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
