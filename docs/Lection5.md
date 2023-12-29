@@ -6,7 +6,7 @@ editor_options:
 
 # Spatial statistics in GeoDa. Part 1
 
-[Lesson cheatsheet](https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson 5.pdf)
+[Lesson summary](https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson 5.pdf)
 
 ## What is spatial statistics?
 

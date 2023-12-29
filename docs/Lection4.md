@@ -6,7 +6,7 @@ editor_options:
 
 # Clustering algorithms in real life problems
 
-[Lesson cheatsheet](https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson 4.pdf)
+[Lesson summary](https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson 4.pdf)
 
 ## Clustering goals:
 
