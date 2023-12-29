@@ -20,9 +20,11 @@ fig:unnamed-chunk-12-2
 about
 the-inroduction
 the-essence-of-maps
+the-necessity-of-maps
+conclusion
 working-with-graphics-in-geoda
 introduction
-specific-od-data-storage-in-gis
+specific-of-data-storage-in-gis
 graphic-types-in-geoda
 histogram
 box-plot
@@ -83,5 +85,5 @@ implementation-in-geoda-2
 regression
 theoretical-basis-4
 implementation-in-geoda-3
-conclusion
+conclusion-1
 task

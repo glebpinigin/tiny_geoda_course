@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 Clustering algorithms in real life problems | GeoDa course</title>
+<title>5 Clustering algorithms in real life problems | GeoDa course</title>
 <meta name="author" content="Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.">
-<meta name="description" content="5.1 Clustering goals: Simplifying data processing Data compression Identification of anomalies (atypical objects) Building a hierarchy of objects  5.2 Where was it used?   Figure 3.1: Pickpoints...">
+<meta name="description" content="Lesson cheatsheet  5.1 Clustering goals: Simplifying data processing Data compression Identification of anomalies (atypical objects) Building a hierarchy of objects  5.2 Where was it used?  ...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Chapter 5 Clustering algorithms in real life problems | GeoDa course">
+<meta property="og:title" content="5 Clustering algorithms in real life problems | GeoDa course">
 <meta property="og:type" content="book">
-<meta property="og:description" content="5.1 Clustering goals: Simplifying data processing Data compression Identification of anomalies (atypical objects) Building a hierarchy of objects  5.2 Where was it used?   Figure 3.1: Pickpoints...">
+<meta property="og:description" content="Lesson cheatsheet  5.1 Clustering goals: Simplifying data processing Data compression Identification of anomalies (atypical objects) Building a hierarchy of objects  5.2 Where was it used?  ...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 Clustering algorithms in real life problems | GeoDa course">
-<meta name="twitter:description" content="5.1 Clustering goals: Simplifying data processing Data compression Identification of anomalies (atypical objects) Building a hierarchy of objects  5.2 Where was it used?   Figure 3.1: Pickpoints...">
+<meta name="twitter:title" content="5 Clustering algorithms in real life problems | GeoDa course">
+<meta name="twitter:description" content="Lesson cheatsheet  5.1 Clustering goals: Simplifying data processing Data compression Identification of anomalies (atypical objects) Building a hierarchy of objects  5.2 Where was it used?  ...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,6 +61,7 @@
 <h1>
 <span class="header-section-number">5</span> Clustering algorithms in real life problems<a class="anchor" aria-label="anchor" href="#clustering-algorithms-in-real-life-problems"><i class="fas fa-link"></i></a>
 </h1>
+<p><a href="https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson%204.pdf">Lesson cheatsheet</a></p>
 <div id="clustering-goals" class="section level2" number="5.1">
 <h2>
 <span class="header-section-number">5.1</span> Clustering goals:<a class="anchor" aria-label="anchor" href="#clustering-goals"><i class="fas fa-link"></i></a>
@@ -79,13 +80,13 @@
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="images/pickpoint_taxi.png" alt="Pickpoints in taxi" width="600"><p class="caption">
-Figure 3.1: Pickpoints in taxi
+Figure 2.1: Pickpoints in taxi
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="images/photo_cluster.png" alt="Multy-scale clustering in gallery" width="600"><p class="caption">
-Figure 3.2: Multy-scale clustering in gallery
+Figure 2.2: Multy-scale clustering in gallery
 </p>
 </div>
 </div>
@@ -132,19 +133,19 @@ Figure 3.2: Multy-scale clustering in gallery
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-3"></span>
 <img src="images/K-means1.gif" alt="Example with four clusters:" width="600"><p class="caption">
-Figure 3.3: Example with four clusters:
+Figure 2.3: Example with four clusters:
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="images/K-means2.png" alt="All points of the resulting clusters are located inside the cells of the Voronoi diagram for the centers of these clusters:" width="600"><p class="caption">
-Figure 3.4: All points of the resulting clusters are located inside the cells of the Voronoi diagram for the centers of these clusters:
+Figure 2.4: All points of the resulting clusters are located inside the cells of the Voronoi diagram for the centers of these clusters:
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="images/K-means3.png" alt="The algorithm is good at identifying only spatially separated clusters of convex shape.:" width="600"><p class="caption">
-Figure 3.5: The algorithm is good at identifying only spatially separated clusters of convex shape.:
+Figure 2.5: The algorithm is good at identifying only spatially separated clusters of convex shape.:
 </p>
 </div>
 </div>
@@ -158,7 +159,7 @@ The working algorithm is presented below:</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="images/ISODATA.gif" alt="ISODATA method" width="600"><p class="caption">
-Figure 3.6: ISODATA method
+Figure 2.6: ISODATA method
 </p>
 </div>
 <p>ISODATA method compared to K-means:</p>
@@ -180,7 +181,7 @@ Figure 3.6: ISODATA method
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="images/Hierarchical%20clustering.png" alt="Hierarchical method" width="600"><p class="caption">
-Figure 3.7: Hierarchical method
+Figure 3.1: Hierarchical method
 </p>
 </div>
 </div>
@@ -204,13 +205,13 @@ Cannot group data sets well where the clusters have different densities.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="images/DBSCAN1.gif" alt="DBSCAN method" width="600"><p class="caption">
-Figure 3.8: DBSCAN method
+Figure 3.2: DBSCAN method
 </p>
 </div>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-9"></span>
 <img src="images/DBSCAN2.gif" alt="DBSCAN method" width="600"><p class="caption">
-Figure 3.9: DBSCAN method
+Figure 3.3: DBSCAN method
 </p>
 </div>
 <p>The described clustering methods are far from the only ones, but they are among the most popular.
@@ -225,7 +226,7 @@ Next, we will look at how these methods are implemented in GEODA.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-10"></span>
 <img src="images/Interface_clust.png" alt="1 - button with clustering tools, 2 - clustering methods? 3 - window with option of clustering" width="600"><p class="caption">
-Figure 3.10: 1 - button with clustering tools, 2 - clustering methods? 3 - window with option of clustering
+Figure 3.4: 1 - button with clustering tools, 2 - clustering methods? 3 - window with option of clustering
 </p>
 </div>
 </div>
@@ -238,7 +239,7 @@ At the same time, we can combine attributive and spatial data both in equal impo
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="images/DATA_TYPE.png" alt="Variants of how clusters look, depending on the choice of data on which clustering is based." width="600"><p class="caption">
-Figure 3.11: Variants of how clusters look, depending on the choice of data on which clustering is based.
+Figure 3.5: Variants of how clusters look, depending on the choice of data on which clustering is based.
 </p>
 </div>
 <p><em>ATTENTION! Use projected coordinates. NOT geographic coordinates.This is necessary for correct calculation of distances. For example, UTM zone 31 N</em></p>
@@ -303,7 +304,7 @@ Send maps and justification for the chosen clustering method to: <a href="mailto
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>GeoDa course</strong>" was written by Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.. It was last built on 2023-12-27.</p>
+    <p>"<strong>GeoDa course</strong>" was written by Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.. It was last built on 2023-12-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

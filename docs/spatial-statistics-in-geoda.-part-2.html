@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 7 Spatial statistics in GeoDa. Part 2 | GeoDa course</title>
+<title>7 Spatial statistics in GeoDa. Part 2 | GeoDa course</title>
 <meta name="author" content="Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.">
-<meta name="description" content="7.1 Previous lection In the previous lesson you have learned why spatial dependence is important, also you have learned some basics including Moran’s Index. There are two types of Moran’s...">
+<meta name="description" content="Lesson cheatsheet  7.1 Previous lection In the previous lesson you have learned why spatial dependence is important, also you have learned some basics including Moran’s Index. There are two types...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Chapter 7 Spatial statistics in GeoDa. Part 2 | GeoDa course">
+<meta property="og:title" content="7 Spatial statistics in GeoDa. Part 2 | GeoDa course">
 <meta property="og:type" content="book">
-<meta property="og:description" content="7.1 Previous lection In the previous lesson you have learned why spatial dependence is important, also you have learned some basics including Moran’s Index. There are two types of Moran’s...">
+<meta property="og:description" content="Lesson cheatsheet  7.1 Previous lection In the previous lesson you have learned why spatial dependence is important, also you have learned some basics including Moran’s Index. There are two types...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 7 Spatial statistics in GeoDa. Part 2 | GeoDa course">
-<meta name="twitter:description" content="7.1 Previous lection In the previous lesson you have learned why spatial dependence is important, also you have learned some basics including Moran’s Index. There are two types of Moran’s...">
+<meta name="twitter:title" content="7 Spatial statistics in GeoDa. Part 2 | GeoDa course">
+<meta name="twitter:description" content="Lesson cheatsheet  7.1 Previous lection In the previous lesson you have learned why spatial dependence is important, also you have learned some basics including Moran’s Index. There are two types...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,21 +61,28 @@
 <h1>
 <span class="header-section-number">7</span> Spatial statistics in GeoDa. Part 2<a class="anchor" aria-label="anchor" href="#spatial-statistics-in-geoda.-part-2"><i class="fas fa-link"></i></a>
 </h1>
+<p><a href="https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson%206.pdf">Lesson cheatsheet</a></p>
 <div id="previous-lection" class="section level2" number="7.1">
 <h2>
 <span class="header-section-number">7.1</span> Previous lection<a class="anchor" aria-label="anchor" href="#previous-lection"><i class="fas fa-link"></i></a>
 </h2>
-<p>In the previous lesson you have learned why spatial dependence is important, also you have learned some basics including Moran’s Index.
-There are two types of Moran’s statistics. First is global Moran’s test. This test allows us to assess the statistical relationship between the value of the indicator in each location and in neighboring locations.
-Second is local Moran’s test. Using this method you can create maps which can illustrate the spatial statistical differences between variables.
-In general, Moran’s Index is needed when you need to prove the importance of connection between two variables.
-But also there are a lot of different methods to explore the data.</p>
+<p>In the previous lesson you have learned why spatial dependence is
+important, also you have learned some basics including Moran’s Index.
+There are two types of Moran’s statistics. First is global Moran’s test.
+This test allows us to assess the statistical relationship between the
+value of the indicator in each location and in neighboring locations.
+Second is local Moran’s test. Using this method you can create maps
+which can illustrate the spatial statistical differences between
+variables. In general, Moran’s Index is needed when you need to prove
+the importance of connection between two variables. But also there are a
+lot of different methods to explore the data.</p>
 </div>
 <div id="theme-of-the-lesson" class="section level2" number="7.2">
 <h2>
 <span class="header-section-number">7.2</span> Theme of the lesson<a class="anchor" aria-label="anchor" href="#theme-of-the-lesson"><i class="fas fa-link"></i></a>
 </h2>
-<p>In this lesson you will study the additional spatial statistics methods represented in GeoDa:</p>
+<p>In this lesson you will study the additional spatial statistics methods
+represented in GeoDa:</p>
 <ul>
 <li>Joint Count</li>
 <li>Local Geary</li>
@@ -88,9 +95,15 @@ But also there are a lot of different methods to explore the data.</p>
 <h2>
 <span class="header-section-number">7.3</span> Contiguity and spatial weights<a class="anchor" aria-label="anchor" href="#contiguity-and-spatial-weights"><i class="fas fa-link"></i></a>
 </h2>
-<p>Contiguity and spatial weights are the two things which you can use in the weight manager in the next cases.</p>
-<p>In its simplest form, the <em>spatial weights</em> matrix expresses the existence of a neighbor relation as a binary relationship, with weights 1 and 0. Usually this matrix is very sparse with a lot of zeros in it.</p>
-<p>Contiguity means that two spatial units share a common border of non-zero length. Operationally, we can further distinguish between a rook and a queen criterion of contiguity, in analogy to the moves allowed for the such-named pieces on a chess board.</p>
+<p>Contiguity and spatial weights are the two things which you can use in
+the weight manager in the next cases.</p>
+<p>In its simplest form, the <em>spatial weights</em> matrix expresses the
+existence of a neighbor relation as a binary relationship, with weights
+1 and 0. Usually this matrix is very sparse with a lot of zeros in it.</p>
+<p>Contiguity means that two spatial units share a common border of
+non-zero length. Operationally, we can further distinguish between a
+rook and a queen criterion of contiguity, in analogy to the moves
+allowed for the such-named pieces on a chess board.</p>
 </div>
 <div id="joint-count-methods" class="section level2" number="7.4">
 <h2>
@@ -100,36 +113,41 @@ But also there are a lot of different methods to explore the data.</p>
 <h3>
 <span class="header-section-number">7.4.1</span> Theoretical basis<a class="anchor" aria-label="anchor" href="#theoretical-basis"><i class="fas fa-link"></i></a>
 </h3>
-<p>Joint Count method is a technique for processing discrete variables, especially for binary variables. It is used to identify clusters in binary variables by means of the local joint count statistics. The statistics consists of counting the joins that correspond to occurrences of value pair at neighboring locations. Mathematic representation of this method:
-<span class="math display">\[
+<p>Joint Count method is a technique for processing discrete variables,
+especially for binary variables. It is used to identify clusters in
+binary variables by means of the local joint count statistics. The
+statistics consists of counting the joins that correspond to occurrences
+of value pair at neighboring locations. Mathematic representation of
+this method: <span class="math display">\[
 BB_i = x_i\sum_{j}{w_i w_j}x_j
-\]</span>
-This equation means that Joint Count is a sum of neighbors of <span class="math inline">\(x_i\)</span> which are have the same value that x. In conclusion, you can use these methods to determine if there is a spatial connection between events or they are distributed in the random way.
-### Implementation in GeoDa
-To create map using this method you have to create a weight matrix first:
-1. Open the Weights Manager
-2. Choose “Create”
-3. Select an ID variable in your dataset
-4. Choose type of contiguity
-5. Choose variable as spatial weight
-6. Save the weight data
-In the end you will see similar picture:</p>
+\]</span> This equation means that Joint Count is a sum of neighbors of <span class="math inline">\(x_i\)</span>
+which are have the same value that x. In conclusion, you can use these
+methods to determine if there is a spatial connection between events or
+they are distributed in the random way. ### Implementation in GeoDa To
+create map using this method you have to create a weight matrix
+first: 1. Open the Weights Manager 2. Choose “Create” 3. Select an ID
+variable in your dataset 4. Choose type of contiguity 5. Choose variable
+as spatial weight 6. Save the weight data In the end you will see
+similar picture:</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="images/weights_JC.png" alt="Weights Manager"><p class="caption">
-Figure 3.1: Weights Manager
+Figure 2.1: Weights Manager
 </p>
 </div>
-<p>After creating the weight matrix you can make the map. The only available option is a significant map.
-1. Open Local Joint Count in Space bar menu
-2. Select the variable you want to explore</p>
+<p>After creating the weight matrix you can make the map. The only
+available option is a significant map. 1. Open Local Joint Count in
+Space bar menu 2. Select the variable you want to explore</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="images/jc_map.png" alt="Local Join Count Significance Map"><p class="caption">
-Figure 3.2: Local Join Count Significance Map
+Figure 2.2: Local Join Count Significance Map
 </p>
 </div>
-<p>This map represents a spatial significance of negative population growth in Chicago city, IL. It means that the regions colored in green have strong connection between their location and decreasing its population. The reason can be different, but this reason stronngly affects to them.</p>
+<p>This map represents a spatial significance of negative population growth
+in Chicago city, IL. It means that the regions colored in green have
+strong connection between their location and decreasing its population.
+The reason can be different, but this reason stronngly affects to them.</p>
 </div>
 </div>
 <div id="local-geary" class="section level2" number="7.5">
@@ -140,30 +158,55 @@ Figure 3.2: Local Join Count Significance Map
 <h3>
 <span class="header-section-number">7.5.1</span> Theoretical basis<a class="anchor" aria-label="anchor" href="#theoretical-basis-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>Local Geary is a method to find the spatial autocorrelation through dissimilarity of data. It means that small values of the statistics suggest positive spatial autocorrelation, whereas large values suggest negative spatial autocorrelation. It can be more precise that Local Moran test in some cases because of differences in attribute similarity.</p>
+<p>Local Geary is a method to find the spatial autocorrelation through
+dissimilarity of data. It means that small values of the statistics
+suggest positive spatial autocorrelation, whereas large values suggest
+negative spatial autocorrelation. It can be more precise that Local
+Moran test in some cases because of differences in attribute similarity.</p>
 </div>
 <div id="implementation-in-geoda" class="section level3" number="7.5.2">
 <h3>
 <span class="header-section-number">7.5.2</span> Implementation in GeoDa<a class="anchor" aria-label="anchor" href="#implementation-in-geoda"><i class="fas fa-link"></i></a>
 </h3>
-<p>First, you need to prepare the weight matrix like in the previous step. Next step is to open “Local Geary” in Space bar menu and select the variable.
-In spite of Joint Count method you can choose two options for the maps. First is a cluster map which is a representation of attribute dependencies. Second variant is a significance map like in the Joint Count method.</p>
+<p>First, you need to prepare the weight matrix like in the previous step.
+Next step is to open “Local Geary” in Space bar menu and select the
+variable. In spite of Joint Count method you can choose two options for
+the maps. First is a cluster map which is a representation of attribute
+dependencies. Second variant is a significance map like in the Joint
+Count method.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-3"></span>
 <img src="images/cluster_lg.png" alt="Local Geary Cluster Map. Tuberculosis in Chicago"><p class="caption">
-Figure 3.3: Local Geary Cluster Map. Tuberculosis in Chicago
+Figure 2.3: Local Geary Cluster Map. Tuberculosis in Chicago
 </p>
 </div>
-<p>The cluster map is a great way to show spatial dependencies connected with attributes. Theoretically there are five categories.
-First category is a “Not Significant”. It means that there is no dependency between attribute and spatial component. Second category is a “High-High”. It this category there is a strong positive connection between attribute and location. The next category is a “Low-Low”. This category represents straight, but negative connection. It means that surrounding area has the similar low values of the attribute like this regions. The fourth category represents low significant straight connection. The last category is about negative connection between this region and surrounding area.
-But what it means in the practical way? Map shown in the top represents the connection between location and tuberculosis spreading, but let’s imagine that it is a cost of the flat in condominium. In the areas with “High-High” category there are high prices both in the colored regions and surrounding area. In the “Low-Low” areas cost is low in the similar way. Despite of this places the areas with negative connection have a potential for a good deal. You need to estimate is this place has a lower price that in surrounding area or not. If it is you can save your money.</p>
+<p>The cluster map is a great way to show spatial dependencies connected
+with attributes. Theoretically there are five categories. First category
+is a “Not Significant”. It means that there is no dependency between
+attribute and spatial component. Second category is a “High-High”. It
+this category there is a strong positive connection between attribute
+and location. The next category is a “Low-Low”. This category represents
+straight, but negative connection. It means that surrounding area has
+the similar low values of the attribute like this regions. The fourth
+category represents low significant straight connection. The last
+category is about negative connection between this region and
+surrounding area. But what it means in the practical way? Map shown in
+the top represents the connection between location and tuberculosis
+spreading, but let’s imagine that it is a cost of the flat in
+condominium. In the areas with “High-High” category there are high
+prices both in the colored regions and surrounding area. In the
+“Low-Low” areas cost is low in the similar way. Despite of this places
+the areas with negative connection have a potential for a good deal. You
+need to estimate is this place has a lower price that in surrounding
+area or not. If it is you can save your money.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="images/sign_lg.png" alt="Local Geary Significance Map. Tuberculosis in Chicago"><p class="caption">
-Figure 3.4: Local Geary Significance Map. Tuberculosis in Chicago
+Figure 2.4: Local Geary Significance Map. Tuberculosis in Chicago
 </p>
 </div>
-<p>The Significance map represents power of the connection between attributes and spatial location like in the Joint Count method.</p>
+<p>The Significance map represents power of the connection between
+attributes and spatial location like in the Joint Count method.</p>
 </div>
 </div>
 <div id="quantile-lisa" class="section level2" number="7.6">
@@ -174,27 +217,38 @@ Figure 3.4: Local Geary Significance Map. Tuberculosis in Chicago
 <h3>
 <span class="header-section-number">7.6.1</span> Theoretical basis<a class="anchor" aria-label="anchor" href="#theoretical-basis-2"><i class="fas fa-link"></i></a>
 </h3>
-<p>Quantile LISA or quantile local spatial autocorrelation is a method to find spatial autocorrelation between two or multiple continuous variables. Linear association measured by Bivariate Local Moran suffers from the location problem. Quantile LISA added a spatial component for measuring correlations. More often it is used when the focus is on extremes of the distribution.</p>
+<p>Quantile LISA or quantile local spatial autocorrelation is a method to
+find spatial autocorrelation between two or multiple continuous
+variables. Linear association measured by Bivariate Local Moran suffers
+from the location problem. Quantile LISA added a spatial component for
+measuring correlations. More often it is used when the focus is on
+extremes of the distribution.</p>
 </div>
 <div id="implementation-in-geoda-1" class="section level3" number="7.6.2">
 <h3>
 <span class="header-section-number">7.6.2</span> Implementation in GeoDa<a class="anchor" aria-label="anchor" href="#implementation-in-geoda-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>First do the steps like in Joint Count and Local Geary methods with creation of spatial weights. Next you need to select the variables and quantiles for analysis.</p>
+<p>First do the steps like in Joint Count and Local Geary methods with
+creation of spatial weights. Next you need to select the variables and
+quantiles for analysis.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="images/lisa_quant.png" alt="Selecting quantiles and number of quantiles"><p class="caption">
-Figure 3.5: Selecting quantiles and number of quantiles
+Figure 2.5: Selecting quantiles and number of quantiles
 </p>
 </div>
-<p>Let’s explore how extreme poverty is connected with teen pregnancy. Select the category and use the last quantile. In this case we will see the dependency between proportion of people with income less than 50% of povery minimum and number of teen pregnancies.</p>
+<p>Let’s explore how extreme poverty is connected with teen pregnancy.
+Select the category and use the last quantile. In this case we will see
+the dependency between proportion of people with income less than 50% of
+povery minimum and number of teen pregnancies.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="images/lisa_signmap.png" alt="Quantile LISA Significance Map. Connection between extreme povery and number of teenage pregnancies"><p class="caption">
-Figure 3.6: Quantile LISA Significance Map. Connection between extreme povery and number of teenage pregnancies
+Figure 2.6: Quantile LISA Significance Map. Connection between extreme povery and number of teenage pregnancies
 </p>
 </div>
-<p>Like in the previous methods we can make a significance map representing power of spatial correlation between attributes.</p>
+<p>Like in the previous methods we can make a significance map representing
+power of spatial correlation between attributes.</p>
 </div>
 </div>
 <div id="spatial-correlogram" class="section level2" number="7.7">
@@ -205,27 +259,43 @@ Figure 3.6: Quantile LISA Significance Map. Connection between extreme povery an
 <h3>
 <span class="header-section-number">7.7.1</span> Theoretical basis<a class="anchor" aria-label="anchor" href="#theoretical-basis-3"><i class="fas fa-link"></i></a>
 </h3>
-<p>A non-parametric spatial correlogram is an alternative measure of global spatial autocorrelation that does not rely on the specification of a spatial weights matrix. Instead, a local regression is fit to the covariances, or correlations computed for all pairs of observations as a function of the distance between them. The non-parametric correlogram is computed by means of a local regression on the pairwise correlations that fall within each distance bin. The number of bins determines the distance range of each bin. This range is the maximum distance divided by the number of bins. The more bins are chosen, the more fine-grained the correlogram will be</p>
+<p>A non-parametric spatial correlogram is an alternative measure of global
+spatial autocorrelation that does not rely on the specification of a
+spatial weights matrix. Instead, a local regression is fit to the
+covariances, or correlations computed for all pairs of observations as a
+function of the distance between them. The non-parametric correlogram is
+computed by means of a local regression on the pairwise correlations
+that fall within each distance bin. The number of bins determines the
+distance range of each bin. This range is the maximum distance divided
+by the number of bins. The more bins are chosen, the more fine-grained
+the correlogram will be</p>
 </div>
 <div id="implementation-in-geoda-2" class="section level3" number="7.7.2">
 <h3>
 <span class="header-section-number">7.7.2</span> Implementation in GeoDa<a class="anchor" aria-label="anchor" href="#implementation-in-geoda-2"><i class="fas fa-link"></i></a>
 </h3>
-<p>First choose Spatial correlogram in space bar tools. Next choose the data. You will see the “Correlogram Parameters” menu.</p>
+<p>First choose Spatial correlogram in space bar tools. Next choose the
+data. You will see the “Correlogram Parameters” menu.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="images/correlogram.png" alt="Selecting quantiles and number of quantiles"><p class="caption">
-Figure 3.7: Selecting quantiles and number of quantiles
+Figure 3.1: Selecting quantiles and number of quantiles
 </p>
 </div>
-<p>You should choose variable for analysis and number of beans first. Note that there is an option that it will be no spatial dependency between distance of the regions and attribute values.</p>
+<p>You should choose variable for analysis and number of beans first. Note
+that there is an option that it will be no spatial dependency between
+distance of the regions and attribute values.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="images/correlogram_2.png" alt="Correlogram between number of assaults and distance"><p class="caption">
-Figure 3.8: Correlogram between number of assaults and distance
+Figure 3.2: Correlogram between number of assaults and distance
 </p>
 </div>
-<p>As you can see there is a little dependency between this two variables. It means that number of assaults decreases with increasing distance parameter between two regions. It can representate the fact that unfortunate districts are close to each other and they are located in the big distance from prosperous ones.</p>
+<p>As you can see there is a little dependency between this two variables.
+It means that number of assaults decreases with increasing distance
+parameter between two regions. It can representate the fact that
+unfortunate districts are close to each other and they are located in
+the big distance from prosperous ones.</p>
 </div>
 </div>
 <div id="regression" class="section level2" number="7.8">
@@ -236,42 +306,59 @@ Figure 3.8: Correlogram between number of assaults and distance
 <h3>
 <span class="header-section-number">7.8.1</span> Theoretical basis<a class="anchor" aria-label="anchor" href="#theoretical-basis-4"><i class="fas fa-link"></i></a>
 </h3>
-<p>Regression analysis is a set of statistical processes for estimating the relationship between a dependent variable and one or more independent variables. In the standard regression parameters of the model are constant. It means that there is no difference in spatial dependence between variables. To solve this problem, you can use geographically weighted regression. In this method weights are defined for every location individually. In the mathematical point of view weight coefficient matrix is used where close points have higher influence rate than far ones.</p>
+<p>Regression analysis is a set of statistical processes for estimating the
+relationship between a dependent variable and one or more independent
+variables. In the standard regression parameters of the model are
+constant. It means that there is no difference in spatial dependence
+between variables. To solve this problem, you can use geographically
+weighted regression. In this method weights are defined for every
+location individually. In the mathematical point of view weight
+coefficient matrix is used where close points have higher influence rate
+than far ones.</p>
 </div>
 <div id="implementation-in-geoda-3" class="section level3" number="7.8.2">
 <h3>
 <span class="header-section-number">7.8.2</span> Implementation in GeoDa<a class="anchor" aria-label="anchor" href="#implementation-in-geoda-3"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
-<li>Note that regression is in different menu than other spatial statistics tools</li>
+<li>Note that regression is in different menu than other spatial
+statistics tools</li>
 <li>You need to select dependent and independent variables</li>
 <li>You may add additional weights file</li>
 </ul>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-9"></span>
 <img src="images/regression1.png" alt="Settings of the regression"><p class="caption">
-Figure 3.9: Settings of the regression
+Figure 3.3: Settings of the regression
 </p>
 </div>
 <p>After processing you will see the Regression Report.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-10"></span>
 <img src="images/regression2.png" alt="Regression Report"><p class="caption">
-Figure 3.10: Regression Report
+Figure 3.4: Regression Report
 </p>
 </div>
-<p>There are two key points in it. First: R-squared – statistical measure that determines the proportion of variance in the dependent variable that can be explained by the independent variable. Second: F-value – statistical measure where the null hypothesis is that all the regression coefficients are equal to zero. In this case regression can’t predict the model of connection between data.</p>
+<p>There are two key points in it. First: R-squared – statistical measure
+that determines the proportion of variance in the dependent variable
+that can be explained by the independent variable. Second: F-value –
+statistical measure where the null hypothesis is that all the regression
+coefficients are equal to zero. In this case regression can’t predict
+the model of connection between data.</p>
 </div>
 </div>
-<div id="conclusion" class="section level2" number="7.9">
+<div id="conclusion-1" class="section level2" number="7.9">
 <h2>
-<span class="header-section-number">7.9</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9</span> Conclusion<a class="anchor" aria-label="anchor" href="#conclusion-1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Use Joint Count methods if you need to process with binary data</li>
-<li>Use Local Geary methods if you need to describe the contiguous data and find similarity and dissimilarity areas</li>
-<li>Use Quantile LISA if you need to process contiguous data with multiple variable and find an autocorrelation</li>
-<li>Use spatial correlogram if you need to find correlation between differences of variable and different distances</li>
+<li>Use Local Geary methods if you need to describe the contiguous data
+and find similarity and dissimilarity areas</li>
+<li>Use Quantile LISA if you need to process contiguous data with
+multiple variable and find an autocorrelation</li>
+<li>Use spatial correlogram if you need to find correlation between
+differences of variable and different distances</li>
 <li>Use a regression to prove your concept</li>
 </ul>
 </div>
@@ -280,12 +367,18 @@ Figure 3.10: Regression Report
 <span class="header-section-number">7.10</span> Task<a class="anchor" aria-label="anchor" href="#task"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
-<li>Explore the spatial correlation between poverty with cancer deaths per 100 000 people in Chicago region.</li>
-<li>Use this dataset: <a href="https://geodacenter.github.io/data-and-lab/comarea_vars/" class="uri">https://geodacenter.github.io/data-and-lab/comarea_vars/</a>
+<li>Explore the spatial correlation between poverty with cancer deaths
+per 100 000 people in Chicago region.</li>
+<li>Use this dataset:
+<a href="https://geodacenter.github.io/data-and-lab/comarea_vars/" class="uri">https://geodacenter.github.io/data-and-lab/comarea_vars/</a>
 </li>
-<li>Use Pov200P as an independent variable and CancerAll as dependent variable</li>
-<li>Try Local Geary and Quantile LISA to find autocorrelation and make map. In the end use regression tool to make a conclusion between their dependency</li>
-<li>Describe the result which you get with significance maps and regression report</li>
+<li>Use Pov200P as an independent variable and CancerAll as dependent
+variable</li>
+<li>Try Local Geary and Quantile LISA to find autocorrelation and make
+map. In the end use regression tool to make a conclusion between
+their dependency</li>
+<li>Describe the result which you get with significance maps and
+regression report</li>
 </ul>
 </div>
 </div>
@@ -326,7 +419,7 @@ Figure 3.10: Regression Report
 <li><a class="nav-link" href="#implementation-in-geoda-3"><span class="header-section-number">7.8.2</span> Implementation in GeoDa</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#conclusion"><span class="header-section-number">7.9</span> Conclusion</a></li>
+<li><a class="nav-link" href="#conclusion-1"><span class="header-section-number">7.9</span> Conclusion</a></li>
 <li><a class="nav-link" href="#task"><span class="header-section-number">7.10</span> Task</a></li>
 </ul>
 
@@ -344,7 +437,7 @@ Figure 3.10: Regression Report
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>GeoDa course</strong>" was written by Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.. It was last built on 2023-12-27.</p>
+    <p>"<strong>GeoDa course</strong>" was written by Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.. It was last built on 2023-12-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -1,7 +1,7 @@
 --- 
 title: "GeoDa course"
 author: "Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V."
-date: "2023-12-27"
+date: "2023-12-29"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

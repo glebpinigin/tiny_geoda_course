@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 6 Spatial statistics in GeoDa. Part 1 | GeoDa course</title>
+<title>6 Spatial statistics in GeoDa. Part 1 | GeoDa course</title>
 <meta name="author" content="Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.">
-<meta name="description" content="6.1 What is spatial statistics? Spatial statistics is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space. Most often, tools...">
+<meta name="description" content="Lesson cheatsheet  6.1 What is spatial statistics? Spatial statistics is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space....">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Chapter 6 Spatial statistics in GeoDa. Part 1 | GeoDa course">
+<meta property="og:title" content="6 Spatial statistics in GeoDa. Part 1 | GeoDa course">
 <meta property="og:type" content="book">
-<meta property="og:description" content="6.1 What is spatial statistics? Spatial statistics is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space. Most often, tools...">
+<meta property="og:description" content="Lesson cheatsheet  6.1 What is spatial statistics? Spatial statistics is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space....">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 6 Spatial statistics in GeoDa. Part 1 | GeoDa course">
-<meta name="twitter:description" content="6.1 What is spatial statistics? Spatial statistics is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space. Most often, tools...">
+<meta name="twitter:title" content="6 Spatial statistics in GeoDa. Part 1 | GeoDa course">
+<meta name="twitter:description" content="Lesson cheatsheet  6.1 What is spatial statistics? Spatial statistics is a branch of mathematical statistics that deals with the numerical description of variables distributed in geographic space....">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,6 +61,7 @@
 <h1>
 <span class="header-section-number">6</span> Spatial statistics in GeoDa. Part 1<a class="anchor" aria-label="anchor" href="#spatial-statistics-in-geoda.-part-1"><i class="fas fa-link"></i></a>
 </h1>
+<p><a href="https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson%205.pdf">Lesson cheatsheet</a></p>
 <div id="what-is-spatial-statistics" class="section level2" number="6.1">
 <h2>
 <span class="header-section-number">6.1</span> What is spatial statistics?<a class="anchor" aria-label="anchor" href="#what-is-spatial-statistics"><i class="fas fa-link"></i></a>
@@ -82,7 +83,7 @@ So, it is essential to explore how to use GeoDa to solve spatial tasks.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-1"></span>
 <img src="images/econometrics.png" alt="Spatial Econometrics topic in [Science Direct portal](https://www.sciencedirect.com/topics/social-sciences/spatial-econometrics)"><p class="caption">
-Figure 3.1: Spatial Econometrics topic in <a href="https://www.sciencedirect.com/topics/social-sciences/spatial-econometrics">Science Direct portal</a>
+Figure 2.1: Spatial Econometrics topic in <a href="https://www.sciencedirect.com/topics/social-sciences/spatial-econometrics">Science Direct portal</a>
 </p>
 </div>
 </div>
@@ -110,7 +111,7 @@ For example, we can examine the <strong>Boston Housing 1970s</strong> dataset, w
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="images/boston_dataset.png" alt="Overview of Boston Housing 1970s dataset" width="600"><p class="caption">
-Figure 3.2: Overview of Boston Housing 1970s dataset
+Figure 2.2: Overview of Boston Housing 1970s dataset
 </p>
 </div>
 <p>It contains 506 observations with 23 variables, each point representing a house for sale.</p>
@@ -138,14 +139,14 @@ To do this, <strong>click on the “W” icon</strong> located on the instrument
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-3"></span>
 <img src="images/weight_matrix_hotbar.png" alt="Weight Manager icon" width="600"><p class="caption">
-Figure 3.3: Weight Manager icon
+Figure 2.3: Weight Manager icon
 </p>
 </div>
 <p>In the pop-up window, we begin to create a matrix of weights by <strong>clicking the “create” button</strong>.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="images/weight_matrix_hotbar2.png" alt="Weight Manager icon" width="400"><p class="caption">
-Figure 3.4: Weight Manager icon
+Figure 2.4: Weight Manager icon
 </p>
 </div>
 <p>The study of spatial autocorrelation begins with an analysis of <em>geographic proximity</em>.
@@ -160,7 +161,7 @@ Leave the rest of the fields with default settings.
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="images/weight_matrix_hotbar3.png" alt="Weight Manager icon" width="600"><p class="caption">
-Figure 3.5: Weight Manager icon
+Figure 2.5: Weight Manager icon
 </p>
 </div>
 </div>
@@ -172,7 +173,7 @@ Figure 3.5: Weight Manager icon
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="images/weight_table.png" alt="Spatial weights table in _Weights Manager_" width="400"><p class="caption">
-Figure 3.6: Spatial weights table in <em>Weights Manager</em>
+Figure 2.6: Spatial weights table in <em>Weights Manager</em>
 </p>
 </div>
 <p>In that window, you can also explore a neighbors’ histogram, connectivity map, and connectivity graph.</p>
@@ -210,14 +211,14 @@ First of all, let’s calculate the univariate Moran’s test.
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="images/glob_moran_uni1.png" alt="Univariate Moran's I menu" width="400"><p class="caption">
-Figure 3.8: Univariate Moran’s I menu
+Figure 3.2: Univariate Moran’s I menu
 </p>
 </div>
 <p>The Moran’s test scatter plot appears.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-9"></span>
 <img src="images/glob_moran_uni2.png" alt="Univariate Moran's I scatter plot" width="400"><p class="caption">
-Figure 3.9: Univariate Moran’s I scatter plot
+Figure 3.3: Univariate Moran’s I scatter plot
 </p>
 </div>
 <p>Moran’s index ranges from -1 to 1.
@@ -250,7 +251,7 @@ Let’s try to calculate the univariate Local Moran’s test.
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="images/loc_moran_uni2.png" alt="Local Moran's I map menu" width="400"><p class="caption">
-Figure 3.11: Local Moran’s I map menu
+Figure 3.5: Local Moran’s I map menu
 </p>
 </div>
 <p>In the pop-up window, you can choose three types of graphics.</p>
@@ -315,7 +316,7 @@ It means that we <strong>need to choose a <em>high-low</em> areas</strong> to in
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>GeoDa course</strong>" was written by Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.. It was last built on 2023-12-27.</p>
+    <p>"<strong>GeoDa course</strong>" was written by Baryshkin P., Volokh E., Mikhailova M., Pinigin G., Romakh E., Sokhrannykh V.. It was last built on 2023-12-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
