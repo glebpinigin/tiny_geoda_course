@@ -1,6 +1,6 @@
 # Thematic maps in Geoda
 
-[Lesson cheatsheet](https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson 3.pdf)
+[Lesson summary](https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson 3.pdf)
 
 Our today's lesson is about how to make simple thematic maps using GeoDa software. We will explore thematic mapping toolkit using Chicago Community Area dataset which has a large attribute table. It allows us to create a huge variety of thematic maps.
 
