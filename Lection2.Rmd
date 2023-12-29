@@ -6,7 +6,7 @@ editor_options:
 
 # Working with graphics in GeoDa
 
-[Lesson cheatsheet](https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson 2.pdf)
+![Lesson cheatsheet](https://glebpinigin.github.io/tiny_geoda_course/cheatsheets/Lesson 2.pdf)
 
 ## Introduction
 Today we are going to get acquaintanced with creating graphics for various statistic datasets in GeoDa. This GIS has prepared datasets and today we’ll use one of them. We’re going to work with **Boston Housing 1970s**, which contains housing and neighborhood data for the city of Boston based on research from the 1970s-90s. This dataset is a point shapefile with **506 observations** and **23 variables**. To open this data you have to choose _File>New_ and to choose _Boston Home Sales_ from _Sample Data_. After that you’ll be able to see the spatial distribution of the parameter. In the bottom left you’ll see the information about the number of observations.
