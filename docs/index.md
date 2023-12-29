@@ -8,9 +8,7 @@ bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
- Welcome to the GeoDa for Economists course materials page. The course is focused on spatial data analysis using GeoDa. It is designed for a wide range of specialists with experience in analyzing economic data using Excel and BI tools. The course covers such sections as plots creation, thematic maps, data clustering, geostatistical analysis
- using GeoDa. [GeoDa](http://geodacenter.github.io/) is a free and open-source software
- for Windows, MacOS and Linux mostly developed by The University of Chicago.
+ Welcome to the GeoDa for Economists course materials page. The course is focused on spatial data analysis using GeoDa. It is designed for a wide range of specialists with experience in analyzing economic data using Excel and BI tools. The course covers such sections as plots creation, thematic maps, data clustering, geostatistical analysis using GeoDa. GeoDa is a free and open-source software for Windows, MacOS and Linux mostly developed by The University of Chicago.
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
